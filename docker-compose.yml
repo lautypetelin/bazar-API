@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  bazar:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://bazar_api:3306/bazar?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: backend
+    restart: always
+    depends_on:
+      bazar_api:
+        condition: service_healthy
+  bazar_api:
+    image: mysql:8.0.33
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: backend
+      MYSQL_PASSWORD: backend
+      MYSQL_DATABASE: bazar
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
