@@ -38,9 +38,7 @@
 
 ## Ejemplo de respuesta con Postman
 
-![Ejemplo de respuesta con Postman](https://github.com/user-attachments/assets/79ab809d-1bb7-4e64-8402-e1dec6a08e7d)
-
-
+![420573662-79ab809d-1bb7-4e64-8402-e1dec6a08e7d](https://github.com/user-attachments/assets/a9525746-71e5-4265-98ca-afbaa71703c1)
 
 ## Colección Postman
 
